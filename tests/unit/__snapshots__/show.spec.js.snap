@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Show.vue renders correctly 1`] = `
+<div
+  class="card mb-3"
+>
+  <div
+    class="row no-gutters"
+  >
+    <div
+      class="col-md-4"
+    >
+      <img
+        alt="Breaking Bad"
+        class="card-img"
+        src="http://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
+      />
+    </div>
+     
+    <div
+      class="col-md-8 align-middle"
+    >
+      <div
+        class="card-body"
+      >
+        <div
+          class="text-truncate"
+        >
+          <b-link-stub
+            class="text-primary"
+            event="click"
+            routertag="a"
+            target="_self"
+            to="/showdetail/169"
+          >
+            Breaking Bad
+          </b-link-stub>
+        </div>
+         
+        <small
+          class="card-text"
+        >
+          
+          Rating:
+          
+          <span
+            class="text-muted"
+          >
+            9.3
+          </span>
+           
+          <br />
+          Genre(s):
+          
+          <span
+            class="text-muted"
+          >
+            Drama, Crime, Thriller
+          </span>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+`;

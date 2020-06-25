@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowDetail.vue renders correctly 1`] = `
+<b-container-stub
+  tag="div"
+>
+  <b-row-stub
+    class="justify-content-md-center"
+    tag="div"
+  >
+    <b-col-stub
+      tag="div"
+    >
+      <div
+        class="card-body"
+      >
+        <b-card-stub
+          bodytag="div"
+          class="mb-3"
+          footertag="div"
+          headertag="div"
+          imgalt="Card image"
+          imgleft="true"
+          imgsrc="http://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg"
+          subtitletag="h6"
+          subtitletextvariant="muted"
+          tag="div"
+          titletag="h4"
+        >
+          <b-card-text-stub
+            texttag="p"
+          >
+            <h4>
+              Breaking Bad
+            </h4>
+             
+            <p>
+              <p>
+                <b>
+                  Breaking Bad
+                </b>
+                 follows protagonist Walter White, a chemistry teacher who lives in New Mexico with his wife and teenage son who has cerebral palsy. White is diagnosed with Stage III cancer and given a prognosis of two years left to live. With a new sense of fearlessness based on his medical prognosis, and a desire to secure his family's financial security, White chooses to enter a dangerous world of drugs and crime and ascends to power in this world. The series explores how a fatal diagnosis such as White's releases a typical man from the daily concerns and constraints of normal society and follows his transformation from mild family man to a kingpin of the drug trade.
+              </p>
+            </p>
+             
+            <small>
+              
+              Rating:
+              
+              <span
+                class="text-muted"
+              >
+                9.3
+              </span>
+               
+              <br />
+              Genre(s):
+              
+              <span
+                class="text-muted"
+              >
+                Drama, Crime, Thriller
+              </span>
+            </small>
+          </b-card-text-stub>
+        </b-card-stub>
+      </div>
+    </b-col-stub>
+  </b-row-stub>
+</b-container-stub>
+`;
