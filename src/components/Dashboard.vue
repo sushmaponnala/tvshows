@@ -11,7 +11,7 @@
       </b-row>
       <b-row>
         <b-col v-for="(show, index) in shows" :key="show.id" md="auto">
-          <div v-if="index <= 4 || moreGenres[genre]">
+          <div v-if="index <= 5 || moreGenres[genre]">
             <Show :name="show.name" :id="show.id" :image="show.image.medium" :rating="show.rating.average" :genres="show.genres" />
           </div>
         </b-col>
@@ -25,11 +25,10 @@ import Show from "./Show.vue";
 import axios from "axios";
 import orderBy from "lodash/orderBy";
 
-const getData = (page, limit, cb) => {
-  // Create object by genre as key and shows as array of objects
-
+const getData = (cb) => {
   // Function to group shows by genre
   const groupByGenre = (data) => {
+    // Create object by genre as key and shows as array of objects
     const showsByGenres = {};
     data.forEach(show => {
       // Loop genres of each show
@@ -87,7 +86,7 @@ export default {
     }
   },
   created() {
-    getData(this.currentPage, this.perPage, (err, response) => {
+    getData((err, response) => {
       if(!err){
         this.showsByGenres = response;
         Object.keys(response).forEach(genre => {

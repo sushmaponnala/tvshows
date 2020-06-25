@@ -19,7 +19,7 @@ exports[`SearchResults.vue renders correctly 1`] = `
         <h4
           class="text-primary"
         >
-          Search results for: 
+          Search results for: fargo
         </h4>
       </b-col-stub>
     </b-row-stub>

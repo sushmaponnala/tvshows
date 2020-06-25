@@ -14,6 +14,7 @@ describe('Header.vue', () => {
             propsData: {},
             localVue
         })
+        wrapper.vm.onSubmit();
         expect(wrapper.element).toMatchSnapshot();
     })
 })

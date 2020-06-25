@@ -5,3 +5,9 @@ exports[`Dashboard.vue renders correctly 1`] = `
   class="dashboard"
 />
 `;
+
+exports[`Dashboard.vue should call axios get 1`] = `
+<div
+  class="dashboard"
+/>
+`;

@@ -24,7 +24,9 @@ import axios from "axios";
 const getData = (query, cb) => {
   axios
     .get(`http://api.tvmaze.com/search/shows?q=${query}`)
-    .then(response => cb(null, response))
+    .then(({ data }) => {
+      cb(null, data);
+    })
     .catch(e => {
       cb(e);
     });
@@ -41,17 +43,24 @@ export default {
       details: {}
     };
   },
-  created() {
+  created(){
+    if(this.$route.query.q){
+      getData(this.$route.query.q, (err, data) => {
+        if(!err){
+          this.details = data;
+          this.query = this.$route.query.q;
+        }
+      });
+    }
   },
   watch: {
-    '$route.query.q': {
-        immediate: true,
-        handler(newVal) {
-            this.query = newVal;
-            getData(newVal, (err, response) => {
-              this.details = response.data;
-            });
-        }
+    $route({query}) {
+        getData(query.q, (err, data) => {
+          if(!err){
+            this.details = data;
+            this.query = query.q;
+          }
+        });
     }
   }
 };
