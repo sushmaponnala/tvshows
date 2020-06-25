@@ -41,7 +41,7 @@ npm run test:unit
    c. PascalCase:
       importing npm packages etc. 
 
-### Project dependencies and devDependencies ---------
+### Architectural Decisions ---------
 1. axios:
    Promise based HTTP client for the browser.
    Please refer below url for more details:
