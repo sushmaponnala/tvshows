@@ -4,6 +4,7 @@ exports[`Dashboard.vue renders correctly 1`] = `
 <div
   class="dashboard"
 >
+  <!---->
    
   <div
     class="text-center"
@@ -22,6 +23,7 @@ exports[`Dashboard.vue should call axios get 1`] = `
 <div
   class="dashboard"
 >
+  <!---->
    
   <div
     class="text-center"

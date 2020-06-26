@@ -50,6 +50,14 @@ export default {
       loading: true
     };
   },
+  beforeRouteUpdate (newVal) {
+    getData(newVal.query.q, (err, data) => {
+      if(!err){
+        this.details = data;
+        this.query = newVal.query.q;
+      }
+    });
+  },
   created(){
     if(this.$route.query.q){
       this.loading = true;
@@ -61,18 +69,18 @@ export default {
         }
       });
     }
-  },
-  watch: {
-    $route({query}) {
-      this.loading = true;
-      getData(query.q, (err, data) => {
-        if(!err){
-          this.loading = false;
-          this.details = data;
-          this.query = query.q;
-        }
-      });
-    }
+  // },
+  // watch: {
+  //   $route({query}) {
+  //     this.loading = true;
+  //     getData(query.q, (err, data) => {
+  //       if(!err){
+  //         this.loading = false;
+  //         this.details = data;
+  //         this.query = query.q;
+  //       }
+  //     });
+  //   }
   }
 };
 </script>

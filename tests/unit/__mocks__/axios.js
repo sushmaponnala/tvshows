@@ -21,6 +21,9 @@ module.exports = {
                     data:search
                 })
             break;
+            case "http://api.tvmaze.com/search/shows?q=error":
+                promise = Promise.reject({})
+            break;
         }
         return promise;
     })

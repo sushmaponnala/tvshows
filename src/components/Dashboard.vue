@@ -1,6 +1,7 @@
 <template>
   <div class="dashboard">
-    <b-container fluid class="shows-row" v-for="(shows,genre) in showsByGenres" :key="genre" v-if="!loading">
+    <div v-if="!loading"> 
+    <b-container fluid class="shows-row" v-for="(shows,genre) in showsByGenres" :key="genre">
       <b-row cols="2">
         <b-col>
           <h4 class="text-primary">Popular {{genre}} Shows</h4>
@@ -17,6 +18,7 @@
         </b-col>
       </b-row>
     </b-container>
+    </div>
     <div v-if="loading" class="text-center">
       <b-spinner label="Spinning"></b-spinner>
     </div>
