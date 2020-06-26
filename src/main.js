@@ -6,16 +6,18 @@ import { BootstrapVue } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import Dashboard from './components/Dashboard.vue'
-import ShowDetail from './components/ShowDetail.vue'
-import SearchResults from "./components/SearchResults.vue";
-
 // Install BootstrapVue
 Vue.use(BootstrapVue)
 
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false
+
+//route lazy loading
+const Dashboard = () => import(/* webpackChunkName: "dashboard" */ './components/Dashboard.vue')
+const ShowDetail = () => import(/* webpackChunkName: "showdetail" */ './components/ShowDetail.vue')
+const SearchResults = () => import(/* webpackChunkName: "searchresults" */ './components/SearchResults.vue')
+
 
 const routes = [
   { path: '/showdetail/:id', component: ShowDetail },

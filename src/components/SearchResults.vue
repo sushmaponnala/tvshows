@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <b-container fluid class="shows-row">
+    <b-container fluid class="shows-row" v-if="!loading">
       <b-row cols="1">
         <b-col>
           <h4 class="text-primary">Search results for: {{query}}</h4>
@@ -11,8 +11,14 @@
         <b-col v-for="{ show } in details" :key="show.id" md="auto" v-if="show.image && show.image.medium">
           <Show :name="show.name" :id="show.id" :image="show.image.medium" :rating="show.rating.average" :genres="show.genres" />
         </b-col>
+        <b-col>
+          <h5 v-if="!Object.keys(details).length" class="text-danger">Sorry! There is no TV Show with "{{query}}" </h5>
+        </b-col>
       </b-row>
     </b-container>
+    <div v-if="loading" class="text-center">
+      <b-spinner label="Spinning"></b-spinner>
+    </div>
   </div>
 </template>
 
@@ -40,13 +46,16 @@ export default {
   data() {
     return {
       query: "",
-      details: {}
+      details: {},
+      loading: true
     };
   },
   created(){
     if(this.$route.query.q){
+      this.loading = true;
       getData(this.$route.query.q, (err, data) => {
         if(!err){
+          this.loading = false;
           this.details = data;
           this.query = this.$route.query.q;
         }
@@ -55,12 +64,14 @@ export default {
   },
   watch: {
     $route({query}) {
-        getData(query.q, (err, data) => {
-          if(!err){
-            this.details = data;
-            this.query = query.q;
-          }
-        });
+      this.loading = true;
+      getData(query.q, (err, data) => {
+        if(!err){
+          this.loading = false;
+          this.details = data;
+          this.query = query.q;
+        }
+      });
     }
   }
 };

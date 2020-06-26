@@ -3,11 +3,35 @@
 exports[`Dashboard.vue renders correctly 1`] = `
 <div
   class="dashboard"
-/>
+>
+   
+  <div
+    class="text-center"
+  >
+    <b-spinner-stub
+      label="Spinning"
+      role="status"
+      tag="span"
+      type="border"
+    />
+  </div>
+</div>
 `;
 
 exports[`Dashboard.vue should call axios get 1`] = `
 <div
   class="dashboard"
-/>
+>
+   
+  <div
+    class="text-center"
+  >
+    <b-spinner-stub
+      label="Spinning"
+      role="status"
+      tag="span"
+      type="border"
+    />
+  </div>
+</div>
 `;

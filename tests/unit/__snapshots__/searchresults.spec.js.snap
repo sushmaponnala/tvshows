@@ -4,42 +4,17 @@ exports[`SearchResults.vue renders correctly 1`] = `
 <div
   class="search"
 >
-  <b-container-stub
-    class="shows-row"
-    fluid="true"
-    tag="div"
+  <!---->
+   
+  <div
+    class="text-center"
   >
-    <b-row-stub
-      cols="1"
-      tag="div"
-    >
-      <b-col-stub
-        tag="div"
-      >
-        <h4
-          class="text-primary"
-        >
-          Search results for: fargo
-        </h4>
-      </b-col-stub>
-    </b-row-stub>
-     
-    <b-row-stub
-      tag="div"
-    >
-      <b-col-stub
-        md="auto"
-        tag="div"
-      >
-        <show-stub
-          genres="Drama,Crime"
-          id="32"
-          image="http://static.tvmaze.com/uploads/images/medium_portrait/248/620754.jpg"
-          name="Fargo"
-          rating="9"
-        />
-      </b-col-stub>
-    </b-row-stub>
-  </b-container-stub>
+    <b-spinner-stub
+      label="Spinning"
+      role="status"
+      tag="span"
+      type="border"
+    />
+  </div>
 </div>
 `;

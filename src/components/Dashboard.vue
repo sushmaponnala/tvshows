@@ -1,11 +1,11 @@
 <template>
   <div class="dashboard">
-    <b-container fluid class="shows-row" v-for="(shows,genre) in showsByGenres" :key="genre">
+    <b-container fluid class="shows-row" v-for="(shows,genre) in showsByGenres" :key="genre" v-if="!loading">
       <b-row cols="2">
         <b-col>
           <h4 class="text-primary">Popular {{genre}} Shows</h4>
         </b-col>
-        <b-col class="text-right">
+        <b-col class="text-right" v-if="shows.length >= 5">
           <b-link href="#" @click="toggleMore(genre)">Show {{moreGenres[genre] ? "less" : "more"}}..</b-link>
         </b-col>
       </b-row>
@@ -17,6 +17,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <div v-if="loading" class="text-center">
+      <b-spinner label="Spinning"></b-spinner>
+    </div>
   </div>
 </template>
 
@@ -77,7 +80,8 @@ export default {
   data() {
     return {
       showsByGenres: [],
-      moreGenres: {}
+      moreGenres: {},
+      loading: true
     };
   },
   methods: {
@@ -88,6 +92,7 @@ export default {
   created() {
     getData((err, response) => {
       if(!err){
+        this.loading = false;
         this.showsByGenres = response;
         Object.keys(response).forEach(genre => {
           this.$set(this.moreGenres, genre, false);
